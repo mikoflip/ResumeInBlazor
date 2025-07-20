@@ -1,0 +1,31 @@
+@inject HttpClient HttpClient
+
+<main class="resume" role="main" aria-label="Resume content">
+    <IntroductionSection Introduction="@_resumeData?.Introduction" />
+    <JobsSection Jobs="@_resumeData?.Jobs" />
+    <ProjectsSection Projects="@_resumeData?.Projects" />
+    <EducationSection Courses="@_resumeData?.Education" />
+    <SkillsSection SkillSets="@_resumeData?.SkillSets" />
+    <CertificationSection Certificates="@_resumeData?.Certification" />
+</main>
+
+@code {
+    [Parameter] public string JsonFilePath { get; set; } = "json/MockDataNL.json";
+
+    public class ResumeData
+    {
+        public Introduction Introduction { get; init; } = new();
+        public List<Job> Jobs { get; init; } = [];
+        public List<Project> Projects { get; init; } = [];
+        public List<Course> Education { get; init; } = [];
+        public List<Certificate> Certification { get; init; } = [];
+        public List<SkillSet> SkillSets { get; init; } = [];
+    }
+
+    private ResumeData? _resumeData;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _resumeData = await HttpClient.GetFromJsonAsync<ResumeData>(JsonFilePath);
+    }
+}
