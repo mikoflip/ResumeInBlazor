@@ -1,0 +1,247 @@
+{
+    "introduction": {
+        "name": "John A. Doe",
+        "email": "john.doe@example.com",
+        "phone": "+1-555-123-4567",
+        "location": "San Francisco, CA",
+        "locationUrl": "https://maps.google.com/?q=San+Francisco,+CA",
+        "linkedin": "https://www.linkedin.com/in/johndoe",
+        "website": "www.johndoe.dev",
+        "websiteUrl": "https://www.johndoe.dev/"
+    },
+    "jobs": [
+        {
+            "title": "Senior Software Engineer",
+            "employer": "Tech Innovators Inc.",
+            "location": "San Francisco, CA",
+            "startDate": "2022-03-01",
+            "responsibilities": [
+                "Lead development of scalable web applications using modern frameworks and cloud technologies.",
+                "Mentor junior developers and establish best practices for code quality and testing.",
+                "Collaborate with product teams to translate business requirements into technical solutions."
+            ]
+        },
+        {
+            "title": "Full-Stack Developer",
+            "employer": "Digital Solutions LLC",
+            "location": "Austin, TX",
+            "startDate": "2020-01-01",
+            "endDate": "2022-02-01",
+            "responsibilities": [
+                "Developed responsive web applications using React, Node.js, and MongoDB.",
+                "Implemented CI/CD pipelines and automated testing frameworks.",
+                "Participated in agile development processes including sprint planning and code reviews."
+            ],
+            "reference": {
+                "name": "Sarah Johnson",
+                "email": "sarah.johnson@digitalsolutions.com",
+                "phone": "+1-555-987-6543",
+                "linkedin": "https://www.linkedin.com/in/sarahjohnson"
+            }
+        },
+        {
+            "title": "Software Developer",
+            "employer": "StartupTech Co.",
+            "location": "Seattle, WA",
+            "startDate": "2018-06-01",
+            "endDate": "2019-12-01",
+            "responsibilities": [
+                "Built and maintained customer-facing web applications using Python Django framework.",
+                "Designed and implemented RESTful APIs for mobile application integration.",
+                "Collaborated with UX/UI designers to create intuitive user interfaces."
+            ],
+            "reference": {
+                "name": "Michael Chen",
+                "email": "michael.chen@startuptech.com",
+                "linkedin": "https://www.linkedin.com/in/michaelchen"
+            }
+        },
+        {
+            "title": "Junior Developer",
+            "employer": "WebCorp Solutions",
+            "location": "Portland, OR",
+            "startDate": "2017-01-01",
+            "endDate": "2018-05-01",
+            "responsibilities": [
+                "Developed dynamic websites using HTML, CSS, JavaScript, and PHP.",
+                "Maintained existing codebases and implemented new features based on client requirements.",
+                "Provided technical support and troubleshooting for web applications."
+            ]
+        },
+        {
+            "title": "Freelance Web Developer",
+            "employer": "Self-Employed",
+            "location": "Remote",
+            "startDate": "2016-01-01",
+            "endDate": "2017-01-01",
+            "responsibilities": [
+                "Created custom websites for small businesses using WordPress and custom PHP solutions.",
+                "Provided ongoing maintenance and support for client websites.",
+                "Managed project timelines and client communications independently."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "E-Commerce Platform",
+            "client": "Personal Project",
+            "location": "San Francisco, CA",
+            "startDate": "2023-01-01",
+            "responsibilities": [
+                "Built a full-featured e-commerce platform using React, Node.js, and PostgreSQL.",
+                "Implemented secure payment processing with Stripe integration.",
+                "Deployed on AWS with automated CI/CD using GitHub Actions."
+            ],
+            "url": "https://ecommerce.johndoe.dev/",
+            "github": "https://github.com/johndoe/ecommerce-platform"
+        },
+        {
+            "title": "Task Management App",
+            "client": "Productivity Solutions Inc.",
+            "location": "Austin, TX",
+            "startDate": "2021-09-01",
+            "endDate": "2021-12-01",
+            "responsibilities": [
+                "Developed a collaborative task management application with real-time updates.",
+                "Implemented user authentication and role-based access control.",
+                "Created responsive UI components using Material-UI and React."
+            ],
+            "reference": {
+                "name": "Lisa Rodriguez",
+                "email": "lisa@productivitysolutions.com",
+                "phone": "+1-555-456-7890",
+                "linkedin": "https://www.linkedin.com/in/lisarodriguez"
+            }
+        },
+        {
+            "title": "Weather Prediction API",
+            "client": "Data Analytics Challenge",
+            "location": "Online",
+            "startDate": "2020-08-01",
+            "responsibilities": [
+                "Built machine learning model to predict weather patterns using historical data.",
+                "Created RESTful API using FastAPI and deployed on Docker containers.",
+                "Achieved 85% accuracy in weather prediction for 7-day forecasts."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "title": "Computer Science (BS)",
+            "institute": "Stanford University",
+            "location": "Stanford, CA",
+            "startDate": "2012-09-01",
+            "endDate": "2016-06-01",
+            "extracurriculars": [
+                "Computer Science Club President",
+                "Hackathon Organizer",
+                "Teaching Assistant for Data Structures"
+            ]
+        },
+        {
+            "title": "Summer Coding Bootcamp",
+            "institute": "Code Academy",
+            "location": "San Francisco, CA",
+            "startDate": "2015-06-01",
+            "endDate": "2015-08-01"
+        }
+    ],
+    "certification": [
+        {
+            "title": "AWS Certified Solutions Architect",
+            "issuer": "Amazon Web Services",
+            "issueDate": "2023-06-01",
+            "id": "AWS-SAA-2023-001234",
+            "url": "https://www.credly.com/badges/aws-saa-2023-001234"
+        },
+        {
+            "title": "Professional Scrum Master I",
+            "issuer": "Scrum.org",
+            "issueDate": "2022-11-01",
+            "id": "PSM-I-567890",
+            "url": "https://www.scrum.org/certificates/PSM-I-567890"
+        },
+        {
+            "title": "Google Cloud Professional Developer",
+            "issuer": "Google Cloud",
+            "issueDate": "2022-08-01",
+            "id": "GCP-PD-2022-789012",
+            "url": "https://www.credential.net/GCP-PD-2022-789012"
+        },
+        {
+            "title": "MongoDB Certified Developer",
+            "issuer": "MongoDB University",
+            "issueDate": "2021-12-01",
+            "id": "MONGO-DEV-345678",
+            "url": "https://university.mongodb.com/certification/MONGO-DEV-345678"
+        },
+        {
+            "title": "React Developer Certification",
+            "issuer": "Meta",
+            "issueDate": "2021-09-01",
+            "id": "META-REACT-901234",
+            "url": "https://www.coursera.org/account/accomplishments/certificate/META-REACT-901234"
+        },
+        {
+            "title": "Docker Certified Associate",
+            "issuer": "Docker Inc.",
+            "issueDate": "2021-03-01",
+            "id": "DOCKER-DCA-456789",
+            "url": "https://training.docker.com/certification/DOCKER-DCA-456789"
+        },
+        {
+            "title": "Kubernetes Application Developer",
+            "issuer": "Cloud Native Computing Foundation",
+            "issueDate": "2020-11-01",
+            "id": "CKAD-2020-123456",
+            "url": "https://www.cncf.io/certification/ckad/CKAD-2020-123456"
+        },
+        {
+            "title": "Python Programming Certification",
+            "issuer": "Python Institute",
+            "issueDate": "2020-05-01",
+            "id": "PCAP-31-03-789012",
+            "url": "https://pythoninstitute.org/certification/PCAP-31-03-789012"
+        },
+        {
+            "title": "Machine Learning Specialization",
+            "issuer": "Coursera",
+            "issueDate": "2019-12-01",
+            "id": "ML-SPEC-345678",
+            "url": "https://www.coursera.org/account/accomplishments/specialization/ML-SPEC-345678"
+        },
+        {
+            "title": "JavaScript Algorithms and Data Structures",
+            "issuer": "freeCodeCamp",
+            "issueDate": "2019-08-01",
+            "id": "JS-ALGO-901234",
+            "url": "https://www.freecodecamp.org/certification/johndoe/javascript-algorithms-and-data-structures"
+        }
+    ],
+    "skillsets": [
+        {
+            "title": "Programming Languages",
+            "skills": ["JavaScript", "Python", "Java", "C#", "TypeScript", "Go", "SQL"]
+        },
+        {
+            "title": "Frontend Technologies",
+            "skills": ["React", "Vue.js", "Angular", "HTML5", "CSS3", "Sass", "Tailwind CSS", "Bootstrap"]
+        },
+        {
+            "title": "Backend Technologies",
+            "skills": ["Node.js", "Express.js", "Django", "Flask", ".NET Core", "Spring Boot", "FastAPI"]
+        },
+        {
+            "title": "Databases & Cloud",
+            "skills": ["PostgreSQL", "MongoDB", "MySQL", "Redis", "AWS", "Google Cloud", "Azure", "Docker", "Kubernetes"]
+        },
+        {
+            "title": "Development Tools",
+            "skills": ["Git", "GitHub", "GitLab", "Jenkins", "Docker", "Webpack", "Jest", "Cypress", "Postman"]
+        },
+        {
+            "title": "Methodologies",
+            "skills": ["Agile/Scrum", "DevOps", "Test-Driven Development", "CI/CD", "Microservices", "RESTful APIs"]
+        }
+    ]
+}
