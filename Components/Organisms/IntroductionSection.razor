@@ -1,0 +1,41 @@
+﻿<section class="introduction">
+    <h1>
+        <span class="name">@Introduction?.Name</span>
+        <IconLinks LinkedIn="@Introduction?.LinkedIn"/>
+    </h1>
+    <div class="links">
+        <a class="email" href="mailto:@Introduction?.Email">@Introduction?.Email</a>
+        <span class="divider">|</span>
+        <a class="phone" href="tel:@Introduction?.Phone">@FormattedPhone</a>
+        <span class="divider">|</span>
+        <a class="location" href="@Introduction?.LocationUrl">@Introduction?.Location</a>
+        <span class="divider">|</span>
+        <a class="website" href="@Introduction?.WebsiteUrl">@Introduction?.Website</a>
+    </div>
+</section>
+
+@code {
+    private const string DutchMobileFormat = "+## # ########";
+
+    [Parameter, EditorRequired] public Introduction? Introduction { get; set; }
+    
+    private string? FormattedPhone
+    {
+        get
+        {
+            if (Introduction?.Phone == null) return Introduction?.Phone;
+            
+            var phone = Introduction.Phone;
+            
+            if (phone.StartsWith("+316") && phone.Length == 12)
+            {
+                var digits = System.Text.RegularExpressions.Regex.Replace(phone, @"\D", "");
+                if (long.TryParse(digits, out long number))
+                {
+                    return number.ToString(DutchMobileFormat);
+                }
+            }
+            return Introduction?.Phone; // Return original if no format matches
+        }
+    }
+}
