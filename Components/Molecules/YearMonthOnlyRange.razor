@@ -1,0 +1,16 @@
+<span class="@AdditionalAttributes?["class"]">
+    <YearMonthOnly class="startDate" Data="@StartDate" Replacement="@StartDateReplacement" />
+    @if (EndDate != null || EndDateReplacement != null)
+    {
+        <span>&ndash;</span>
+        <YearMonthOnly class="endDate" Data="@EndDate" Replacement="@EndDateReplacement" />
+    }
+</span>
+
+@code {
+    [Parameter, EditorRequired] public DateOnly? StartDate { get; set; }
+    [Parameter, EditorRequired] public DateOnly? EndDate { get; set; }
+    [Parameter] public string? StartDateReplacement { get; set; }
+    [Parameter] public string? EndDateReplacement { get; set; }
+    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object>? AdditionalAttributes { get; set; }
+}
