@@ -1,0 +1,12 @@
+@if (Ref != null)
+{
+    <span class="divider">|</span>
+    <span class="reference">
+        @Ref.Name
+        <IconLinks Email="@Ref.Email" Phone="@Ref.Phone" LinkedIn="@Ref.LinkedIn" />
+    </span>
+}
+
+@code {
+    [Parameter, EditorRequired] public Reference? Ref { get; set; }
+}

@@ -1,0 +1,18 @@
+<section class="skills">
+    <SectionHeading Title="Vaardigheden" />
+    
+    <ItemsIterator TItem="SkillSet" Items="SkillSets" Context="skillSet">
+        <article class="skillCategory">
+            <h3 class="title">@skillSet.Title</h3>
+            <ul class="skillSet">
+                <ItemsIterator TItem="string" Items="skillSet.Skills" Context="skill">
+                    <li class="skill">@skill</li>
+                </ItemsIterator>
+            </ul>
+        </article>
+    </ItemsIterator>
+</section>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<SkillSet> SkillSets { get; set; } = null!;
+}

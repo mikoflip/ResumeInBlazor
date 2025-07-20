@@ -1,0 +1,25 @@
+﻿<section class="education">
+    <SectionHeading Title="Opleidingen" />
+
+    <ItemsIterator TItem="Course" Items="Courses" Context="course">
+        <article class="course">
+            <h3>
+                <span class="institute">@course.Institute</span>
+                <YearMonthOnlyRange class="period" StartDate="@course.StartDate" EndDate="@course.EndDate"/>
+            </h3>
+            <h4>
+                <span class="title">@course.Title</span>
+                <span class="location">@course.Location</span>
+            </h4>
+            <ul class="extracurriculars">
+                <ItemsIterator TItem="string" Items="course.Extracurriculars" Context="responsibility">
+                    <li class="responsibility">@responsibility</li>
+                </ItemsIterator>
+            </ul>
+        </article>
+    </ItemsIterator>
+</section>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<Course> Courses { get; set; } = null!;
+}
