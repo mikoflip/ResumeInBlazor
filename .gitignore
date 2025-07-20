@@ -1,0 +1,12 @@
+# Directories to ignore
+.idea/
+.vscode/
+bin/
+obj/
+node_modules
+
+# Files to ignore
+*.cache
+.DS_Store
+package-lock.json
+wwwroot/css/styles.css
