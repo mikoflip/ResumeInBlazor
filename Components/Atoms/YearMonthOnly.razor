@@ -1,0 +1,21 @@
+@using System.Globalization
+
+<span class="@AdditionalAttributes?["class"]">
+    @if (Data == null && !string.IsNullOrEmpty(Replacement))
+    {
+        @Replacement
+    }
+    else
+    {
+        @Data?.ToString(Format, new CultureInfo(Culture))
+    }
+</span>
+
+@code {
+    private const string Format = "MMM yyyy";
+    private const string Culture = "nl-NL";
+
+    [Parameter, EditorRequired] public DateOnly? Data { get; set; }
+    [Parameter] public string? Replacement { get; set; }
+    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object>? AdditionalAttributes { get; set; }
+}
