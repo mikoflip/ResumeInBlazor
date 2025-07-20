@@ -1,0 +1,28 @@
+﻿<section class="jobs">
+    <SectionHeading Title="Werkervaring" />
+    
+    <ItemsIterator TItem="Job" Items="Jobs" Context="job">
+        <article class="job">
+            <h3>
+                <span class="employer">@job.Employer</span>
+                <YearMonthOnlyRange class="period" StartDate="@job.StartDate" EndDate="@job.EndDate" EndDateReplacement="Heden"/>
+            </h3>
+            <h4>
+                <span class="title">
+                    @job.Title
+                    <ReferenceSection Ref="@job.Reference"/>
+                </span>
+                <span class="location">@job.Location</span>
+            </h4>
+            <ul class="responsibilities">
+                <ItemsIterator TItem="string" Items="job.Responsibilities" Context="responsibility">
+                    <li class="responsibility">@responsibility</li>
+                </ItemsIterator>
+            </ul>
+        </article>
+    </ItemsIterator>
+</section>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<Job> Jobs { get; set; } = null!;
+}

@@ -1,0 +1,23 @@
+<section class="certification">
+    <SectionHeading Title="Certificaten" />
+
+    <ItemsIterator TItem="Certificate" Items="Certificates" Context="certificate">
+        <article class="certificate">
+            <h3>
+                <span class="title">@certificate.Title</span>
+                <YearMonthOnly class="period" Data="@certificate.IssueDate"/>
+            </h3>
+            <h4>
+                <a class="url" href="@certificate.Url">
+                    <span class="id">@certificate.Id</span>
+                    <IconLinks Url="@certificate.Url"/>
+                </a>
+                <span class="issuer">@certificate.Issuer</span>
+            </h4>
+        </article>
+    </ItemsIterator>
+</section>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<Certificate> Certificates { get; set; } = null!;
+}

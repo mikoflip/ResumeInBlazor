@@ -1,0 +1,31 @@
+﻿<section class="projects">
+    <SectionHeading Title="Projecten" />
+
+    <ItemsIterator TItem="Project" Items="Projects" Context="project">
+        <article class="project">
+            <h3>
+                <span class="title">
+                    @project.Title
+                    <IconLinks Url="@project.Url" Github="@project.Github" />
+                </span>
+                <YearMonthOnlyRange class="period" StartDate="@project.StartDate" EndDate="@project.EndDate"/>
+            </h3>
+            <h4>
+                <span class="client">
+                    @project.Client
+                    <ReferenceSection Ref="@project.Reference"/>
+                </span>
+                <span class="location">@project.Location</span>
+            </h4>
+            <ul class="responsibilities">
+                <ItemsIterator TItem="string" Items="project.Responsibilities" Context="responsibility">
+                    <li class="responsibility">@responsibility</li>
+                </ItemsIterator>
+            </ul>
+        </article>
+    </ItemsIterator>
+</section>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<Project> Projects { get; set; } = null!;
+}
