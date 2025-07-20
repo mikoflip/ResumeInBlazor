@@ -1,0 +1,254 @@
+{
+    "introduction": {
+        "name": "Jan P. Jansen",
+        "email": "jan.jansen@example.nl",
+        "phone": "+31612345678",
+        "location": "Amsterdam, Nederland",
+        "locationUrl": "https://maps.google.com/?q=Amsterdam,+Nederland",
+        "linkedin": "https://www.linkedin.com/in/janjansen",
+        "website": "www.janjansen.dev",
+        "websiteUrl": "https://www.janjansen.dev/"
+    },
+    "jobs": [
+        {
+            "title": "Senior Software Engineer",
+            "employer": "TechnoVatie B.V.",
+            "location": "Amsterdam, Nederland",
+            "startDate": "2022-03-01",
+            "responsibilities": [
+                "Leiding geven aan de ontwikkeling van schaalbare webapplicaties met moderne frameworks en cloud technologieën.",
+                "Mentoren van junior developers en het opstellen van best practices voor code kwaliteit en testing.",
+                "Samenwerken met productteams om bedrijfsvereisten te vertalen naar technische oplossingen."
+            ]
+        },
+        {
+            "title": "Full-Stack Developer",
+            "employer": "Digitale Innovaties Nederland B.V.",
+            "location": "Utrecht, Nederland",
+            "startDate": "2020-01-01",
+            "endDate": "2022-02-01",
+            "responsibilities": [
+                "Ontwikkelen van responsieve webapplicaties met React, Node.js en MongoDB.",
+                "Implementeren van CI/CD pipelines en geautomatiseerde test frameworks.",
+                "Deelnemen aan agile ontwikkelprocessen inclusief sprint planning en code reviews."
+            ],
+            "reference": {
+                "name": "Sandra de Vries",
+                "email": "sandra.devries@digitaleinnovaties.nl",
+                "phone": "+31687654321",
+                "linkedin": "https://www.linkedin.com/in/sandradevries"
+            }
+        },
+        {
+            "title": "Software Developer",
+            "employer": "StartupHub Rotterdam",
+            "location": "Rotterdam, Nederland",
+            "startDate": "2018-06-01",
+            "endDate": "2019-12-01",
+            "responsibilities": [
+                "Bouwen en onderhouden van klantgerichte webapplicaties met Python Django framework.",
+                "Ontwerpen en implementeren van RESTful APIs voor mobiele applicatie integratie.",
+                "Samenwerken met UX/UI designers om intuïtieve gebruikersinterfaces te creëren."
+            ],
+            "reference": {
+                "name": "Mark van der Berg",
+                "email": "mark.vandenberg@startuphub.nl",
+                "linkedin": "https://www.linkedin.com/in/markvandenberg"
+            }
+        },
+        {
+            "title": "Junior Developer",
+            "employer": "WebTech Solutions B.V.",
+            "location": "Den Haag, Nederland",
+            "startDate": "2017-01-01",
+            "endDate": "2018-05-01",
+            "responsibilities": [
+                "Ontwikkelen van dynamische websites met HTML, CSS, JavaScript en PHP.",
+                "Onderhouden van bestaande codebases en implementeren van nieuwe features op basis van klant eisen.",
+                "Technische ondersteuning en troubleshooting voor webapplicaties."
+            ]
+        },
+        {
+            "title": "Freelance Webdeveloper",
+            "employer": "Zelfstandig Ondernemer",
+            "location": "Remote",
+            "startDate": "2016-01-01",
+            "endDate": "2017-01-01",
+            "responsibilities": [
+                "Maatwerk websites maken voor kleine bedrijven met WordPress en custom PHP oplossingen.",
+                "Doorlopend onderhoud en support voor klant websites.",
+                "Zelfstandig beheren van projectplanning en klantcommunicatie."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "E-Commerce Platform",
+            "client": "Persoonlijk Project",
+            "location": "Amsterdam, Nederland",
+            "startDate": "2023-01-01",
+            "responsibilities": [
+                "Bouwen van een volledig functioneel e-commerce platform met React, Node.js en PostgreSQL.",
+                "Implementeren van veilige betalingsverwerking met Stripe integratie.",
+                "Deployment op AWS met geautomatiseerde CI/CD via GitHub Actions."
+            ],
+            "url": "https://webshop.janjansen.dev/",
+            "github": "https://github.com/janjansen/ecommerce-platform"
+        },
+        {
+            "title": "Taakbeheer Applicatie",
+            "client": "Productiviteit Solutions B.V.",
+            "location": "Utrecht, Nederland",
+            "startDate": "2021-09-01",
+            "endDate": "2021-12-01",
+            "responsibilities": [
+                "Ontwikkelen van een collaboratieve taakbeheer applicatie met real-time updates.",
+                "Implementeren van gebruikersauthenticatie en rol-gebaseerde toegangscontrole.",
+                "Creëren van responsieve UI componenten met Material-UI en React."
+            ],
+            "reference": {
+                "name": "Lisa Bakker",
+                "email": "lisa@productiviteitsolutions.nl",
+                "phone": "+31654321987",
+                "linkedin": "https://www.linkedin.com/in/lisabakker"
+            }
+        },
+        {
+            "title": "Weer Voorspelling API",
+            "client": "Data Analytics Challenge",
+            "location": "Online",
+            "startDate": "2020-08-01",
+            "responsibilities": [
+                "Bouwen van machine learning model om weerpatronen te voorspellen met historische data.",
+                "Creëren van RESTful API met FastAPI en deployment op Docker containers.",
+                "Behalen van 85% nauwkeurigheid in weervoorspelling voor 7-daagse forecasts."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "title": "Informatica (BSc)",
+            "institute": "Universiteit van Amsterdam",
+            "location": "Amsterdam, Nederland",
+            "startDate": "2012-09-01",
+            "endDate": "2016-06-01",
+            "extracurriculars": [
+                "Voorzitter Studievereniging Informatica",
+                "Student-assistent Datastructuren"
+            ]
+        },
+        {
+            "title": "Zomer Programmeer Bootcamp",
+            "institute": "Code Academie Nederland",
+            "location": "Amsterdam, Nederland",
+            "startDate": "2015-06-01",
+            "endDate": "2015-08-01"
+        }
+    ],
+    "certification": [
+        {
+            "title": "AWS Certified Solutions Architect",
+            "issuer": "Amazon Web Services",
+            "issueDate": "2023-06-01",
+            "id": "AWS-SAA-2023-NL001234",
+            "url": "https://www.credly.com/badges/aws-saa-2023-nl001234"
+        },
+        {
+            "title": "Professional Scrum Master I",
+            "issuer": "Scrum.org",
+            "issueDate": "2022-11-01",
+            "id": "PSM-I-NL567890",
+            "url": "https://www.scrum.org/certificates/PSM-I-NL567890"
+        },
+        {
+            "title": "Google Cloud Professional Developer",
+            "issuer": "Google Cloud",
+            "issueDate": "2022-08-01",
+            "id": "GCP-PD-2022-NL789012",
+            "url": "https://www.credential.net/GCP-PD-2022-NL789012"
+        },
+        {
+            "title": "MongoDB Certified Developer",
+            "issuer": "MongoDB University",
+            "issueDate": "2021-12-01",
+            "id": "MONGO-DEV-NL345678",
+            "url": "https://university.mongodb.com/certification/MONGO-DEV-NL345678"
+        },
+        {
+            "title": "React Developer Certification",
+            "issuer": "Meta",
+            "issueDate": "2021-09-01",
+            "id": "META-REACT-NL901234",
+            "url": "https://www.coursera.org/account/accomplishments/certificate/META-REACT-NL901234"
+        },
+        {
+            "title": "Docker Certified Associate",
+            "issuer": "Docker Inc.",
+            "issueDate": "2021-03-01",
+            "id": "DOCKER-DCA-NL456789",
+            "url": "https://training.docker.com/certification/DOCKER-DCA-NL456789"
+        },
+        {
+            "title": "Kubernetes Application Developer",
+            "issuer": "Cloud Native Computing Foundation",
+            "issueDate": "2020-11-01",
+            "id": "CKAD-2020-NL123456",
+            "url": "https://www.cncf.io/certification/ckad/CKAD-2020-NL123456"
+        },
+        {
+            "title": "Python Programming Certification",
+            "issuer": "Python Institute",
+            "issueDate": "2020-05-01",
+            "id": "PCAP-31-03-NL789012",
+            "url": "https://pythoninstitute.org/certification/PCAP-31-03-NL789012"
+        },
+        {
+            "title": "Machine Learning Specialization",
+            "issuer": "Coursera",
+            "issueDate": "2019-12-01",
+            "id": "ML-SPEC-NL345678",
+            "url": "https://www.coursera.org/account/accomplishments/specialization/ML-SPEC-NL345678"
+        },
+        {
+            "title": "JavaScript Algorithms and Data Structures",
+            "issuer": "freeCodeCamp",
+            "issueDate": "2019-08-01",
+            "id": "JS-ALGO-NL901234",
+            "url": "https://www.freecodecamp.org/certification/janjansen/javascript-algorithms-and-data-structures"
+        }
+    ],
+    "skillsets": [
+        {
+            "title": "Programmeertalen",
+            "skills": ["JavaScript", "Python", "Java", "C#", "TypeScript", "Go", "SQL"]
+        },
+        {
+            "title": "Frontend Technologieën",
+            "skills": ["React", "Vue.js", "Angular", "HTML5", "CSS3", "Sass", "Tailwind CSS"]
+        },
+        {
+            "title": "Backend Technologieën",
+            "skills": ["Node.js", "Express.js", "Django", "Flask", ".NET Core", "Spring Boot", "FastAPI"]
+        },
+        {
+            "title": "Databases & Cloud",
+            "skills": ["PostgreSQL", "MongoDB", "Redis", "AWS", "Google Cloud", "Azure", "Kubernetes"]
+        },
+        {
+            "title": "Ontwikkeltools",
+            "skills": ["Git", "GitHub", "GitLab", "Jenkins", "Docker", "Webpack", "Jest", "Cypress", "Postman"]
+        },
+        {
+            "title": "Methodologieën",
+            "skills": ["Agile/Scrum", "DevOps", "Test-Driven Development", "CI/CD", "Microservices"]
+        },
+        {
+            "title": "Talen",
+            "skills": ["Nederlands (moedertaal)", "Engels (C2)", "Duits (B2)", "Frans (basis)"]
+        },
+        {
+            "title": "Rijbewijzen",
+            "skills": ["B", "AM"]
+        }
+    ]
+}
