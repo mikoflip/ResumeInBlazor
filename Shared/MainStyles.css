@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+@import "tailwindcss";
+
+/* Theme Variables */
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-b1: 6rem; /*  96px */
+  --breakpoint-b2: 10rem; /* 160px */
+  --breakpoint-b3: 15rem; /* 240px */
+  --breakpoint-b4: 20rem; /* 320px */
+  --breakpoint-b5: 30rem; /* 480px */
+  --breakpoint-b6: 40rem; /* 640px */
+  --breakpoint-b7: 48rem; /* 768px */
+
+  --container-c1: 6rem; /*  96px */
+  --container-c2: 10rem; /* 160px */
+  --container-c3: 15rem; /* 240px */
+  --container-c4: 20rem; /* 320px */
+  --container-c5: 30rem; /* 480px */
+  --container-c6: 40rem; /* 640px */
+  --container-c7: 48rem; /* 768px */
+
+  --font-ubuntu: "Ubuntu Mono", monospace;
+  --font-garamond:
+    "Garamond", "EB Garamond", "Cormorant Garamond", "Times New Roman", "Times",
+    serif;
+
+  --text-*: initial;
+  --text-base-s0: 8px;
+  --text-base-s1: 8px;
+  --text-base-s2: 10px;
+  --text-base-s3: 12px;
+  --text-base-s4: 14px;
+  --text-base-s5: 16px;
+
+  --text-lg-s0: 8px;
+  --text-lg-s1: 10px;
+  --text-lg-s2: 12px;
+  --text-lg-s3: 14px;
+  --text-lg-s4: 16px;
+  --text-lg-s5: 18px;
+
+  --text-xl-s0: 10px;
+  --text-xl-s1: 16px;
+  --text-xl-s2: 24px;
+  --text-xl-s3: 28px;
+  --text-xl-s4: 32px;
+  --text-xl-s5: 36px;
+}
+
+/* Responsive Utilities */
+
+@utility flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@utility flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@utility r-icon-base {
+  width: theme(--text-base-s0);
+
+  @media (min-width: theme(--breakpoint-b1)) {
+    width: theme(--text-base-s1);
+  }
+
+  @media (min-width: theme(--breakpoint-b2)) {
+    width: theme(--text-base-s2);
+  }
+
+  @media (min-width: theme(--breakpoint-b3)) {
+    width: theme(--text-base-s3);
+  }
+
+  @media (min-width: theme(--breakpoint-b4)) {
+    width: theme(--text-base-s4);
+  }
+
+  @media (min-width: theme(--breakpoint-b5)) {
+    width: theme(--text-base-s5);
+  }
+}
+
+@utility r-icon-lg {
+  width: theme(--text-lg-s0);
+
+  @media (min-width: theme(--breakpoint-b1)) {
+    width: theme(--text-lg-s1);
+  }
+
+  @media (min-width: theme(--breakpoint-b2)) {
+    width: theme(--text-lg-s2);
+  }
+
+  @media (min-width: theme(--breakpoint-b3)) {
+    width: theme(--text-lg-s3);
+  }
+
+  @media (min-width: theme(--breakpoint-b4)) {
+    width: theme(--text-lg-s4);
+  }
+
+  @media (min-width: theme(--breakpoint-b5)) {
+    width: theme(--text-lg-s5);
+  }
+}
+
+@utility r-icon-xl {
+  width: theme(--text-xl-s0);
+
+  @media (min-width: theme(--breakpoint-b1)) {
+    width: theme(--text-xl-s1);
+  }
+
+  @media (min-width: theme(--breakpoint-b2)) {
+    width: theme(--text-xl-s2);
+  }
+
+  @media (min-width: theme(--breakpoint-b3)) {
+    width: theme(--text-xl-s3);
+  }
+
+  @media (min-width: theme(--breakpoint-b4)) {
+    width: theme(--text-xl-s4);
+  }
+
+  @media (min-width: theme(--breakpoint-b5)) {
+    width: theme(--text-xl-s5);
+  }
+}
+
+@utility r-text-base {
+  font-size: theme(--text-base-s0);
+
+  @media (min-width: theme(--breakpoint-b1)) {
+    font-size: theme(--text-base-s1);
+  }
+
+  @media (min-width: theme(--breakpoint-b2)) {
+    font-size: theme(--text-base-s2);
+  }
+
+  @media (min-width: theme(--breakpoint-b3)) {
+    font-size: theme(--text-base-s3);
+  }
+
+  @media (min-width: theme(--breakpoint-b4)) {
+    font-size: theme(--text-base-s4);
+  }
+
+  @media (min-width: theme(--breakpoint-b5)) {
+    font-size: theme(--text-base-s5);
+  }
+}
+
+@utility r-text-lg {
+  font-size: theme(--text-lg-s0);
+
+  @media (min-width: theme(--breakpoint-b1)) {
+    font-size: theme(--text-lg-s1);
+  }
+
+  @media (min-width: theme(--breakpoint-b2)) {
+    font-size: theme(--text-lg-s2);
+  }
+
+  @media (min-width: theme(--breakpoint-b3)) {
+    font-size: theme(--text-lg-s3);
+  }
+
+  @media (min-width: theme(--breakpoint-b4)) {
+    font-size: theme(--text-lg-s4);
+  }
+
+  @media (min-width: theme(--breakpoint-b5)) {
+    font-size: theme(--text-lg-s5);
+  }
+}
+
+@utility r-text-xl {
+  font-size: theme(--text-xl-s0);
+
+  @media (min-width: theme(--breakpoint-b1)) {
+    font-size: theme(--text-xl-s1);
+  }
+
+  @media (min-width: theme(--breakpoint-b2)) {
+    font-size: theme(--text-xl-s2);
+  }
+
+  @media (min-width: theme(--breakpoint-b3)) {
+    font-size: theme(--text-xl-s3);
+  }
+
+  @media (min-width: theme(--breakpoint-b4)) {
+    font-size: theme(--text-xl-s4);
+  }
+
+  @media (min-width: theme(--breakpoint-b5)) {
+    font-size: theme(--text-xl-s5);
+  }
+}
+
+/* Print Styles */
+
+@media print {
+  @page {
+    min-height: 29.7cm; /* A4 height */
+    margin: 0 !important;
+    size: A4 !important;
+  }
+
+  section.jobs,
+  section.skills {
+    page-break-after: always;
+    break-after: page;
+  }
+  
+  section.projects,
+  section.certification {
+    @apply mt-4;
+  }
+}
+
+/* Resume Theme Styles */
+
+.iconLinks {
+  @apply flex-row gap-x-1;
+}
+
+.spanningUnderline {
+  @apply h-px flex-grow bg-slate-800;
+}
+
+.resume {
+  @apply max-w-c7 mx-auto;
+  @apply flex-col gap-y-2;
+  @apply b1:*:first:mb-2 b2:*:first:mb-4 b3:*:first:mb-8 b6:*:first:mb-0;
+}
+
+body {
+  @apply r-text-base font-garamond fill-slate-800 leading-tight text-slate-800;
+  @apply b1:p-1 b2:p-2 b3:p-4;
+
+  ul {
+    @apply list-inside list-disc;
+  }
+
+  ol {
+    @apply list-inside list-decimal;
+  }
+
+  svg {
+    @apply r-icon-base;
+  }
+}
+
+section {
+  @apply b4:gap-y-2 flex-col gap-y-1;
+  @apply b1:p-1 b2:p-2 b3:p-4 first:pt-2 first:pb-0 nth-2:pt-0;
+
+  h2 {
+    @apply r-text-lg font-bold uppercase;
+    @apply b1:justify-center b6:justify-start flex-row items-baseline gap-x-1;
+
+    .spanningUnderline {
+      @apply b6:inline hidden;
+    }
+  }
+
+  article {
+    @apply flex-col;
+
+    h3 {
+      @apply r-text-lg font-bold;
+      @apply b6:flex-row b6:justify-between flex-col *:first:flex-row *:first:gap-x-1;
+
+      .iconLinks {
+        @apply b1:flex-row hidden;
+      }
+    }
+
+    h4 {
+      @apply r-text-lg fill-slate-700 text-slate-700 italic;
+      @apply b6:flex-row b6:justify-between flex-col *:first:flex-row *:first:gap-x-1;
+
+      .divider {
+        @apply b6:inline hidden;
+      }
+
+      .reference {
+        @apply b6:flex-row hidden gap-x-1.5;
+      }
+    }
+
+    .period {
+      @apply b2:*:first:w-auto *:first:w-full;
+      @apply b2:flex-nowrap flex-row flex-wrap gap-x-1;
+      @apply b2:*:nth-2:ml-0 *:nth-2:ml-1;
+    }
+  }
+}
+
+/* Specifics & Overrides */
+
+section.introduction {
+  @apply r-text-lg;
+  @apply b4:gap-0 flex-col;
+
+  h1 {
+    @apply r-text-xl font-bold normal-case;
+    @apply b6:flex-row b6:justify-between flex-col;
+    @apply b4:gap-y-0 gap-y-1;
+  }
+
+  svg {
+    @apply b6:r-icon-xl r-icon-lg;
+  }
+
+  .links {
+    @apply b6:flex-row b6:gap-x-1 flex-col;
+
+    .divider {
+      @apply b6:block hidden;
+    }
+  }
+}
+
+section.jobs article,
+section.projects article {
+  ul {
+    @apply b4:flex-col b4:gap-y-0.5 hidden;
+    @apply mt-1 *:ml-[.1rem] *:before:ml-[-0.5rem];
+  }
+}
+
+section.education article {
+  ul {
+    @apply *:not-first:before:content-[";_"] *:first:before:content-["Extracurriculair:_"] *:last:after:content-["."];
+    @apply b4:block hidden *:inline;
+    @apply mt-1;
+  }
+}
+
+section.projects article {
+  @apply b6:*:first:flex-row;
+}
+
+section.skills article {
+  @apply *:not-first:font-normal;
+  @apply b6:flex-row b6:gap-x-1 flex-col;
+
+  ul {
+    @apply r-text-lg b6:*:not-first:before:content-[",_"] b6:*:last:after:content-["."];
+    @apply b6:*:inline block;
+    @apply b6:*:ml-0 b6:*:before:ml-0 *:ml-[.1rem] *:before:ml-[-0.5rem];
+  }
+}
+
+section.certification article {
+  .id {
+    @apply truncate;
+  }
+}
