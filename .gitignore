@@ -1,6 +1,8 @@
 # Directories to ignore
+.claude/
 .idea/
 .vscode/
+.zed/
 bin/
 obj/
 node_modules
