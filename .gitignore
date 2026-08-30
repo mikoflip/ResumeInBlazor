@@ -11,4 +11,9 @@ node_modules
 *.cache
 .DS_Store
 package-lock.json
+
+# Generated from MainStyles.css by Tailwind CLI — do not hand-edit
 wwwroot/css/styles.css
+
+# Generated from *.razor.pcss by build-scoped-css.js — do not hand-edit
+**/*.razor.css
