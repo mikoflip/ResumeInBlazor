@@ -1,0 +1,15 @@
+<span class="monthYearRange" @attributes="AdditionalAttributes">
+    <MonthYear Value="@StartDate" />
+    @if (MonthYear.HasValue(EndDate, EndDateReplacement))
+    {
+        <span>&ndash;</span>
+        <MonthYear Value="@EndDate" Replacement="@EndDateReplacement" />
+    }
+</span>
+
+@code {
+    [Parameter, EditorRequired] public DateOnly? StartDate { get; set; }
+    [Parameter] public DateOnly? EndDate { get; set; }
+    [Parameter] public string? EndDateReplacement { get; set; }
+    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object>? AdditionalAttributes { get; set; }
+}

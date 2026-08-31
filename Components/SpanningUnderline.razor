@@ -1,0 +1,5 @@
+<span class="spanningUnderline" @attributes="AdditionalAttributes"></span>
+
+@code {
+    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object>? AdditionalAttributes { get; set; }
+}

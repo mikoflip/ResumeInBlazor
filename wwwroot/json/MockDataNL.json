@@ -1,13 +1,17 @@
 {
+    "lang": "nl",
+    "locale": {
+        "monthNames": ["Jan", "Feb", "Mrt", "Apr", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
+        "extracurricularsLabel": "Extracurriculair:"
+    },
     "introduction": {
         "name": "Jan P. Jansen",
         "email": "jan.jansen@example.nl",
-        "phone": "+31612345678",
+        "phone": "+31 6 12345678",
         "location": "Amsterdam, Nederland",
-        "locationUrl": "https://maps.google.com/?q=Amsterdam,+Nederland",
+        "locationMap": "https://maps.google.com/?q=Amsterdam,+Nederland",
         "linkedin": "https://www.linkedin.com/in/janjansen",
-        "website": "www.janjansen.dev",
-        "websiteUrl": "https://www.janjansen.dev/"
+        "website": "https://www.janjansen.dev/"
     },
     "jobs": [
         {
@@ -19,7 +23,8 @@
                 "Leiding geven aan de ontwikkeling van schaalbare webapplicaties met moderne frameworks en cloud technologieën.",
                 "Mentoren van junior developers en het opstellen van best practices voor code kwaliteit en testing.",
                 "Samenwerken met productteams om bedrijfsvereisten te vertalen naar technische oplossingen."
-            ]
+            ],
+            "endDateReplacement": "Heden"
         },
         {
             "title": "Full-Stack Developer",

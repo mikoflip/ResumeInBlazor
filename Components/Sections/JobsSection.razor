@@ -1,0 +1,20 @@
+﻿<Section TItem="Job" CssClass="jobs" Title="Werkervaring" Items="Jobs" Context="job">
+    <article class="@PrintBreakCss.Combine("job", job)">
+        <h3>
+            <span class="employer">@job.Employer</span>
+            <MonthYearRange StartDate="@job.StartDate" EndDate="@job.EndDate" EndDateReplacement="@job.EndDateReplacement"/>
+        </h3>
+        <h4>
+            <span class="title">
+                @job.Title
+                <Reference Value="@job.Reference"/>
+            </span>
+            <span class="location">@job.Location</span>
+        </h4>
+        <Responsibilities Items="job.Responsibilities"/>
+    </article>
+</Section>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<Job> Jobs { get; set; } = null!;
+}

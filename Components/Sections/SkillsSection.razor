@@ -1,0 +1,14 @@
+<Section TItem="SkillSet" CssClass="skills" Title="Vaardigheden" Items="SkillSets" Context="skillSet">
+    <article class="@PrintBreakCss.Combine("skillCategory", skillSet)">
+        <h3 class="title">@skillSet.Title</h3>
+        <ul class="skillSet">
+            <ItemsIterator TItem="string" Items="skillSet.Skills" Context="skill">
+                <li class="skill">@skill</li>
+            </ItemsIterator>
+        </ul>
+    </article>
+</Section>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<SkillSet> SkillSets { get; set; } = null!;
+}
