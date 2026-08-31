@@ -1,13 +1,17 @@
 {
+    "lang": "en",
+    "locale": {
+        "monthNames": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        "extracurricularsLabel": "Extracurricular:"
+    },
     "introduction": {
         "name": "John A. Doe",
         "email": "john.doe@example.com",
         "phone": "+1-555-123-4567",
         "location": "San Francisco, CA",
-        "locationUrl": "https://maps.google.com/?q=San+Francisco,+CA",
+        "locationMap": "https://maps.google.com/?q=San+Francisco,+CA",
         "linkedin": "https://www.linkedin.com/in/johndoe",
-        "website": "www.johndoe.dev",
-        "websiteUrl": "https://www.johndoe.dev/"
+        "website": "https://www.johndoe.dev/"
     },
     "jobs": [
         {
@@ -19,7 +23,8 @@
                 "Lead development of scalable web applications using modern frameworks and cloud technologies.",
                 "Mentor junior developers and establish best practices for code quality and testing.",
                 "Collaborate with product teams to translate business requirements into technical solutions."
-            ]
+            ],
+            "endDateReplacement": "Present"
         },
         {
             "title": "Full-Stack Developer",

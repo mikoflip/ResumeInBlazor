@@ -1,0 +1,39 @@
+@inject HttpClient HttpClient
+@inject IJSRuntime JSRuntime
+
+<CascadingValue Value="@_resumeData?.Locale" Name="Locale">
+    <IntroductionSection Introduction="@_resumeData?.Introduction" />
+    <JobsSection Jobs="@(_resumeData?.Jobs!)" />
+    <ProjectsSection Projects="@(_resumeData?.Projects!)" />
+    <EducationSection Programmes="@(_resumeData?.Education!)" />
+    <SkillsSection SkillSets="@(_resumeData?.SkillSets!)" />
+    <CertificatesSection Certificates="@(_resumeData?.Certificates!)" />
+</CascadingValue>
+
+@code {
+    [Parameter] public string JsonFilePath { get; set; } = "json/ResumeDataNL.json";
+
+    public class ResumeData
+    {
+        public string? Lang { get; init; }
+        public Locale? Locale { get; init; }
+        public Introduction Introduction { get; init; } = new();
+        public List<Job> Jobs { get; init; } = [];
+        public List<Project> Projects { get; init; } = [];
+        public List<Programme> Education { get; init; } = [];
+        public List<Certificate> Certificates { get; init; } = [];
+        public List<SkillSet> SkillSets { get; init; } = [];
+    }
+
+    private ResumeData? _resumeData;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _resumeData = await HttpClient.GetFromJsonAsync<ResumeData>(JsonFilePath);
+
+        if (!string.IsNullOrEmpty(_resumeData?.Lang))
+        {
+            await JSRuntime.InvokeVoidAsync("document.documentElement.setAttribute", "lang", _resumeData.Lang);
+        }
+    }
+}

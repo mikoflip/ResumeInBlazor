@@ -1,0 +1,24 @@
+﻿<Section TItem="Project" CssClass="projects" Title="Projecten" Items="Projects" Context="project">
+    <article class="@PrintBreakCss.Combine("project", project)">
+        <h3>
+            <span class="title">
+                @project.Title
+                <Url Href="@project.Url"/>
+                <Github Value="@project.Github"/>
+            </span>
+            <MonthYearRange StartDate="@project.StartDate" EndDate="@project.EndDate"/>
+        </h3>
+        <h4>
+            <span class="client">
+                @project.Client
+                <Reference Value="@project.Reference"/>
+            </span>
+            <span class="location">@project.Location</span>
+        </h4>
+        <Responsibilities Items="project.Responsibilities"/>
+    </article>
+</Section>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<Project> Projects { get; set; } = null!;
+}

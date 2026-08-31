@@ -1,0 +1,20 @@
+@typeparam TItem
+
+<section class="@CssClass">
+    <h2>
+        <span>@Title</span>
+        <SpanningUnderline/>
+    </h2>
+    <ItemsIterator TItem="TItem" Items="VisibleItems" Context="item">
+        @ChildContent(item)
+    </ItemsIterator>
+</section>
+
+@code {
+    [Parameter, EditorRequired] public string CssClass { get; set; } = null!;
+    [Parameter, EditorRequired] public string Title { get; set; } = null!;
+    [Parameter, EditorRequired] public IEnumerable<TItem> Items { get; set; } = null!;
+    [Parameter, EditorRequired] public RenderFragment<TItem> ChildContent { get; set; } = null!;
+
+    private IEnumerable<TItem>? VisibleItems => Items?.Where(item => item is not IHideable { Hidden: true });
+}

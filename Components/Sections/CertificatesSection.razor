@@ -1,0 +1,19 @@
+<Section TItem="Certificate" CssClass="certificates" Title="Certificaten" Items="Certificates" Context="certificate">
+    <article class="@PrintBreakCss.Combine("certificate", certificate)">
+        <h3>
+            <span class="title">@certificate.Title</span>
+            <MonthYear Value="@certificate.IssueDate"/>
+        </h3>
+        <h4>
+            <span class="url">
+                <a class="id" href="@certificate.Url">@certificate.Id</a>
+                <Url Href="@certificate.Url"/>
+            </span>
+            <span class="issuer">@certificate.Issuer</span>
+        </h4>
+    </article>
+</Section>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<Certificate> Certificates { get; set; } = null!;
+}

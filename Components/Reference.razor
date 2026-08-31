@@ -1,0 +1,15 @@
+@if (Value != null)
+{
+    <span class="reference">
+        @Value.Name
+        <div class="iconLinks">
+            <Email Value="@Value.Email" />
+            <Phone Value="@Value.Phone" />
+            <LinkedIn Value="@Value.LinkedIn" />
+        </div>
+    </span>
+}
+
+@code {
+    [Parameter, EditorRequired] public Models.Dtos.Reference? Value { get; set; }
+}

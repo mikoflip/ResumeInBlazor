@@ -1,0 +1,30 @@
+@reference "#styles/MainStyles.css";
+
+section {
+  @apply flex-col gap-y-2;
+  @apply p-4 nth-2:pt-0;
+
+  h2 {
+    @apply b2:justify-start flex-row items-baseline justify-center gap-x-1;
+  }
+
+  ::deep article {
+    @apply flex-col;
+
+    h3 {
+      @apply b2:flex-row b2:justify-between flex-col;
+
+      > *:first-child {
+        @apply flex-row gap-x-1;
+      }
+    }
+
+    h4 {
+      @apply b2:flex-row b2:justify-between flex-col;
+
+      > *:first-child {
+        @apply flex-row gap-x-1;
+      }
+    }
+  }
+}

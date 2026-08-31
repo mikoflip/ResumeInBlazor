@@ -1,0 +1,9 @@
+<ul class="responsibilities">
+    <ItemsIterator TItem="string" Items="Items" Context="responsibility">
+        <li class="responsibility">@responsibility</li>
+    </ItemsIterator>
+</ul>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<string>? Items { get; set; }
+}

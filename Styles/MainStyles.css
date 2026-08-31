@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+@import "tailwindcss";
+
+/* @apply convention: one line per concern, in this order —
+   1) Layout (incl. gap-*)
+   2) Spacing
+   3) Content/pseudo (before/after/first/last/empty) */
+
+/* Theme Variables */
+
+@theme {
+  --base-width: 1rem; /* 16px */
+
+  --breakpoint-*: initial;
+  --breakpoint-b1: 30rem; /* 480px */
+  --breakpoint-b2: 40rem; /* 640px */
+  --breakpoint-b3: 48rem; /* 768px */
+
+  --container-body-min: 15rem; /* 240px */
+  --container-main-max: 48rem; /* 768px */
+
+  --font-ubuntu: "Ubuntu Mono", monospace;
+  --font-garamond:
+    "Garamond", "EB Garamond", "Cormorant Garamond", "Times New Roman", "Times",
+    serif;
+
+  --text-*: initial;
+}
+
+/* Responsive Utilities */
+
+@utility flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@utility flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Print Styles */
+
+@media print {
+  @page {
+    min-height: 29.7cm; /* A4 height */
+    margin: 0 !important;
+    size: A4 !important;
+  }
+
+  .print-break-before {
+    page-break-before: always;
+    break-before: page;
+    @apply mt-4;
+  }
+
+  /* Flag on a section's first entry means "start this section on a new page" -
+     move the break to the section so the heading isn't left orphaned above it. */
+  section:has(> :first-of-type.print-break-before) {
+    page-break-before: always;
+    break-before: page;
+    @apply mt-4;
+  }
+
+  section > :first-of-type.print-break-before {
+    page-break-before: auto;
+    break-before: auto;
+    margin-top: 0;
+  }
+}
+
+/* Resume Theme Styles */
+
+body {
+  @apply font-garamond fill-slate-800 leading-tight text-(--base-width) text-slate-800;
+  @apply min-w-body-min p-4;
+
+  ul {
+    @apply list-inside list-disc;
+  }
+
+  ol {
+    @apply list-inside list-decimal;
+  }
+
+  svg {
+    @apply w-(--base-width);
+  }
+
+  h1 {
+    @apply b2:text-[36px] text-[28px] font-bold normal-case;
+  }
+
+  h2 {
+    @apply b1:text-[18px] font-bold uppercase;
+  }
+
+  h3 {
+    @apply b1:text-[18px] font-bold;
+  }
+
+  h4 {
+    @apply b1:text-[18px] fill-slate-700 text-slate-700 italic;
+  }
+
+  .skillSet {
+    @apply b1:text-[18px] not-first:font-normal;
+  }
+
+  .responsibility {
+    @apply before:text-[14px];
+  }
+}
+
+/* Loading Screen */
+
+.loading-progress {
+  @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  @apply h-32 w-32;
+
+  circle {
+    fill: none;
+    stroke-width: 0.6rem;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+  }
+
+  circle:first-child {
+    @apply stroke-slate-200;
+  }
+
+  circle:last-child {
+    @apply stroke-slate-800;
+    stroke-dasharray:
+      calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
+    transition: stroke-dasharray 0.05s ease-in-out;
+  }
+}
+
+.loading-progress-text {
+  @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  @apply font-garamond font-bold tracking-wide text-slate-800 uppercase;
+
+  &:after {
+    content: var(--blazor-load-percentage-text, "Loading");
+  }
+}

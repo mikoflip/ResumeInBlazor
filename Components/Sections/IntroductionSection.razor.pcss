@@ -1,0 +1,28 @@
+@reference "#styles/MainStyles.css";
+
+section {
+  @apply flex-col gap-0;
+  @apply mb-0 px-4 pt-2 pb-0;
+
+  h1 {
+    @apply b2:flex-row b2:justify-between flex-col gap-y-0;
+  }
+
+  .links {
+    @apply b2:flex-row b2:justify-between flex-col;
+
+    .textLinks {
+      @apply b1:flex-row b1:gap-x-1 flex-col;
+
+      a {
+        @apply empty:hidden;
+        @apply b1:not-first:before:content-["_|_"];
+      }
+    }
+
+    .iconLinks {
+      @apply flex-row gap-x-1;
+      @apply b2:pt-0 pt-1;
+    }
+  }
+}

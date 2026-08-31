@@ -1,0 +1,11 @@
+@reference "#styles/MainStyles.css";
+
+.responsibilities {
+  @apply flex-col gap-y-0.5;
+  @apply mt-1;
+
+  .responsibility {
+    @apply list-none;
+    @apply before:content-["•\00a0\00a0"];
+  }
+}

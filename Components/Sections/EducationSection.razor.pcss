@@ -1,0 +1,10 @@
+@reference "#styles/MainStyles.css";
+
+.extracurriculars {
+  @apply flex-row gap-x-1;
+  @apply mt-1;
+
+  .extracurricular {
+    @apply not-first:before:content-[";_"] last:after:content-["."];
+  }
+}

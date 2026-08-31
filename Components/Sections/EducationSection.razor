@@ -1,0 +1,28 @@
+﻿<Section TItem="Programme" CssClass="education" Title="Opleidingen" Items="Programmes" Context="programme">
+    <article class="@PrintBreakCss.Combine("programme", programme)">
+        <h3>
+            <span class="institute">@programme.Institute</span>
+            <MonthYearRange StartDate="@programme.StartDate" EndDate="@programme.EndDate"/>
+        </h3>
+        <h4>
+            <span class="title">@programme.Title</span>
+            <span class="location">@programme.Location</span>
+        </h4>
+        @if (programme.Extracurriculars is { Length: > 0 })
+        {
+            <p class="extracurriculars">
+                <span class="extracurricularsLabel">@Locale?.ExtracurricularsLabel</span>
+                <span class="extracurricularsList">
+                    <ItemsIterator TItem="string" Items="programme.Extracurriculars" Context="extracurricular">
+                        <span class="extracurricular">@extracurricular</span>
+                    </ItemsIterator>
+                </span>
+            </p>
+        }
+    </article>
+</Section>
+
+@code {
+    [Parameter, EditorRequired] public IEnumerable<Programme> Programmes { get; set; } = null!;
+    [CascadingParameter(Name = "Locale")] public Locale? Locale { get; set; }
+}

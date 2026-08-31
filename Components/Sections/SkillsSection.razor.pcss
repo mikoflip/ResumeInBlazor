@@ -1,0 +1,23 @@
+@reference "#styles/MainStyles.css";
+
+.skillCategory {
+  @apply b2:flex-row b2:gap-x-1 b2:items-start flex-col;
+
+  .title {
+    @apply b2:w-36 b2:shrink-0 b3:w-auto b3:shrink;
+
+    @media print {
+      @apply w-auto;
+    }
+  }
+
+  .skillSet {
+    @apply block;
+
+    .skill {
+      @apply b2:inline;
+      @apply b2:ml-0 b2:before:ml-0 ml-[.1rem] before:ml-[-0.5rem];
+      @apply b2:not-first:before:content-[",_"] b2:last:after:content-["."];
+    }
+  }
+}

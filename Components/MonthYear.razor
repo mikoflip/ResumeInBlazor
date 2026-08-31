@@ -1,0 +1,23 @@
+<span @attributes="AdditionalAttributes">
+    @if (Value == null && !string.IsNullOrEmpty(Replacement))
+    {
+        @Replacement
+    }
+    else if (Value != null)
+    {
+        @($"{(Locale?.MonthNames ?? DefaultMonthNames)[Value.Value.Month - 1]} {Value.Value.Year}")
+    }
+</span>
+
+@code {
+    private static readonly string[] DefaultMonthNames =
+        ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    public static bool HasValue(DateOnly? value, string? replacement) =>
+        value != null || !string.IsNullOrEmpty(replacement);
+
+    [Parameter, EditorRequired] public DateOnly? Value { get; set; }
+    [Parameter] public string? Replacement { get; set; }
+    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object>? AdditionalAttributes { get; set; }
+    [CascadingParameter(Name = "Locale")] public Locale? Locale { get; set; }
+}
