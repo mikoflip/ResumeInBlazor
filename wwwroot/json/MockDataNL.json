@@ -41,7 +41,8 @@
                 "name": "Sandra de Vries",
                 "email": "sandra.devries@digitaleinnovaties.nl",
                 "phone": "+31687654321",
-                "linkedin": "https://www.linkedin.com/in/sandradevries"
+                "linkedin": "https://www.linkedin.com/in/sandradevries",
+                "website": "https://www.digitaleinnovaties.nl/"
             }
         },
         {
@@ -150,7 +151,7 @@
             "endDate": "2015-08-01"
         }
     ],
-    "certification": [
+    "certificates": [
         {
             "title": "AWS Certified Solutions Architect",
             "issuer": "Amazon Web Services",

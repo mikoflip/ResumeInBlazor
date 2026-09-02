@@ -41,7 +41,8 @@
                 "name": "Sarah Johnson",
                 "email": "sarah.johnson@digitalsolutions.com",
                 "phone": "+1-555-987-6543",
-                "linkedin": "https://www.linkedin.com/in/sarahjohnson"
+                "linkedin": "https://www.linkedin.com/in/sarahjohnson",
+                "website": "https://www.digitalsolutions.com/"
             }
         },
         {
@@ -151,7 +152,7 @@
             "endDate": "2015-08-01"
         }
     ],
-    "certification": [
+    "certificates": [
         {
             "title": "AWS Certified Solutions Architect",
             "issuer": "Amazon Web Services",
