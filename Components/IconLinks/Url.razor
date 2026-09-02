@@ -1,14 +1,17 @@
-<a href="@Href">
-    @if (ChildContent != null)
-    {
-        @ChildContent
-    }
-    else
-    {
-        <span class="sr-only">@Href</span>
-        @DefaultIcon
-    }
-</a>
+@if (!string.IsNullOrEmpty(Href))
+{
+    <a href="@Href">
+        @if (ChildContent != null)
+        {
+            @ChildContent
+        }
+        else
+        {
+            <span class="sr-only">@Href</span>
+            @DefaultIcon
+        }
+    </a>
+}
 
 @code {
     [Parameter, EditorRequired] public string? Href { get; set; }

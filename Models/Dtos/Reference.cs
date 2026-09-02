@@ -6,4 +6,5 @@ public class Reference
     public string? Phone { get; set; }
     public string? Email { get; set; }
     public string? LinkedIn { get; set; }
+    public string? Website { get; set; }
 }
