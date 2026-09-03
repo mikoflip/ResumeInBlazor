@@ -13,21 +13,45 @@ The design is inspired by the [Reddit-famous "Sheets Resume,"](https://www.reddi
 ## 🛠️ Tech Stack
 
 - **Frontend Framework**: Blazor WebAssembly (.NET 9)
-- **Styling**: Tailwind CSS
-- **Architecture**: Atomic Design principles
+- **Styling**: Tailwind CSS v4 with a per-component scoped-CSS build pipeline
+- **Architecture**: Feature/section components over a typed DTO model, behind an `IResumeSource` data abstraction
 - **Responsive Design**: Mobile-first approach
 - **Hosting**: GitHub Pages
 - **CI/CD**: GitHub Actions
 
 ## 🏗️ Architecture & Design Patterns
 
-### Atomic Design Structure
+### Component Structure
 ```
 Components/
-├── Atoms/           # Basic building blocks (buttons, inputs, text)
-├── Molecules/       # Simple combinations of atoms
-└── Organisms/       # Complex UI sections (header, sections)
+├── Features/        # Top-level feature composition (Resume)
+├── Sections/        # Resume sections (Introduction, Jobs, Projects, …)
+├── IconLinks/       # Contact / reference link icons (Email, Github, Website, …)
+├── Layouts/         # App layout
+└── *.razor          # Shared leaf components (MonthYearRange, Reference, …)
 ```
+
+Components render a strongly-typed DTO model (`Models/Dtos/`), with cross-cutting
+behaviors expressed as interfaces (`Models/Interfaces/` — `IHideable`,
+`IPrintBreakable`).
+
+### Resume data (`IResumeSource`)
+Resume content is loaded through the `IResumeSource` abstraction
+(`Services/IResumeSource.cs`), so components hold no knowledge of where the data
+comes from. The current implementation, `StaticJsonResumeSource`, reads a static
+JSON file shipped in `wwwroot/json/` (`MockDataNL.json` by default — the path is
+a `const` in `StaticJsonResumeSource.cs`). Swapping in another source (e.g. a
+resume API) is a single DI registration change in `Program.cs`.
+
+To use your own data, replace `wwwroot/json/MockDataNL.json` with a document of
+the same shape as `Models/Dtos/ResumeData.cs`.
+
+### Scoped CSS pipeline
+Global styles live in `Styles/MainStyles.css` (Tailwind v4 theme, element rules,
+print styles). Each component may carry a `*.razor.pcss` file that is compiled to
+a matching `*.razor.css` by `build-scoped-css.js`. The build runs automatically
+before `dotnet build` (MSBuild `BuildScopedCss` target) and in CI; run it
+manually with `npm run build:css`.
 
 ### Key Features
 - **Component-Based Architecture**: Reusable, maintainable components
@@ -60,18 +84,16 @@ Components/
    npm install
    ```
 
-3. **Build Tailwind CSS**
-   ```bash
-   npm run build:css
-   ```
-
-4. **Run the application**
+3. **Run the application**
    ```bash
    dotnet watch run
    ```
+   Scoped CSS is compiled automatically before each build via the MSBuild
+   `BuildScopedCss` target. To format + rebuild CSS and run in one step, use
+   `npm run dev`; to rebuild CSS only, use `npm run build:css`.
 
-5. **Open in browser**
-   Navigate to `https://localhost:5001`
+4. **Open in browser**
+   Navigate to `http://localhost:5100` (or `https://localhost:7100` with the `https` profile)
 
 ### Development with DevContainer
 
@@ -87,11 +109,16 @@ For a consistent development environment:
 ## 📱 Responsive Design
 
 
-**Key breakpoints:**
-- **Extra Small**: 50px - 240px (smartwatches, narrow mobile)
-- **Mobile**: 240px - 480px (phones)
-- **Tablet**: 480px - 768px (tablets, small laptops)
-- **Desktop**: 768px+ (laptops, desktops, ultrawide)
+Layout bounds and breakpoints are defined in the Tailwind `@theme` block in
+`Styles/MainStyles.css`:
+
+- **Body min-width**: `240px` (`--container-body-min`)
+- **Main content max-width**: `768px` (`--container-main-max`)
+
+**Custom breakpoints** (the default Tailwind scale is disabled via `--breakpoint-*: initial`):
+- **`b1`**: `480px` (phones → larger phones)
+- **`b2`**: `640px` (tablets)
+- **`b3`**: `768px` (small laptops and up)
 
 ## 🎨 Styling Philosophy
 
@@ -104,12 +131,19 @@ For a consistent development environment:
 
 ```
 ├── Components/
-│   ├── Atoms/         # Basic UI elements
-│   ├── Molecules/     # Component combinations
-│   └── Organisms/     # Page sections
-├── Models/            # Data models and ViewModels
-├── Views/             # Page components
-├── wwwroot/           # Static assets
+│   ├── Features/      # Top-level feature composition
+│   ├── Sections/      # Resume sections
+│   ├── IconLinks/     # Contact / reference link icons
+│   ├── Layouts/       # App layout
+│   └── *.razor        # Shared leaf components (+ *.razor.pcss scoped styles)
+├── Models/
+│   ├── Dtos/          # Resume data model
+│   └── Interfaces/    # Cross-cutting component behaviors
+├── Services/          # IResumeSource abstraction + StaticJsonResumeSource
+├── Pages/             # Routable pages (Home)
+├── Styles/            # Global Tailwind entry (MainStyles.css)
+├── wwwroot/           # Static assets (incl. json/ resume data)
+├── build-scoped-css.js  # Per-component pcss → css compiler
 ├── .github/           # GitHub Actions workflows
 └── .devcontainer/     # Development container config
 ```
@@ -122,7 +156,8 @@ For a consistent development environment:
 ```
 
 ### Automated Deployment
-- **GitHub Actions** automatically builds and deploys to GitHub Pages
+- **GitHub Actions** builds and deploys to GitHub Pages on every push to `main`
+- Manual runs are supported via `workflow_dispatch` from the Actions tab
 - **Tailwind CSS** is compiled during the build process
 - **Optimized output** for production performance
 
