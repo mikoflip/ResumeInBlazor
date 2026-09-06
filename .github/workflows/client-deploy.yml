@@ -10,14 +10,14 @@ on:
       - 'ResumeInBlazor.Client/**'
       - 'ResumeInBlazor.Contracts/**'
       - 'ResumeInBlazor.sln'
-      - '.github/workflows/dotnet.yml'
+      - '.github/workflows/client-deploy.yml'
   pull_request:
     branches: [ "main" ]
     paths:
       - 'ResumeInBlazor.Client/**'
       - 'ResumeInBlazor.Contracts/**'
       - 'ResumeInBlazor.sln'
-      - '.github/workflows/dotnet.yml'
+      - '.github/workflows/client-deploy.yml'
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
