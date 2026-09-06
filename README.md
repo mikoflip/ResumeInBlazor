@@ -22,6 +22,10 @@ The design is inspired by the [Reddit-famous "Sheets Resume,"](https://www.reddi
 ## 🏗️ Architecture & Design Patterns
 
 ### Component Structure
+
+The Blazor WebAssembly app lives in `ResumeInBlazor.Client/`; all paths in this
+section are relative to that project.
+
 ```
 Components/
 ├── Features/        # Top-level feature composition (Resume)
@@ -72,8 +76,9 @@ manually with `npm run build:css`.
 1. **Clone the repository**
    ```bash
    git clone https://github.com/mikoflip/ResumeInBlazor.git
-   cd ResumeInBlazor
+   cd ResumeInBlazor/ResumeInBlazor.Client
    ```
+   All commands below run from the `ResumeInBlazor.Client/` project directory.
 
 2. **Install dependencies**
    ```bash
@@ -110,7 +115,7 @@ For a consistent development environment:
 
 
 Layout bounds and breakpoints are defined in the Tailwind `@theme` block in
-`Styles/MainStyles.css`:
+`ResumeInBlazor.Client/Styles/MainStyles.css`:
 
 - **Body min-width**: `240px` (`--container-body-min`)
 - **Main content max-width**: `768px` (`--container-main-max`)
@@ -130,29 +135,31 @@ Layout bounds and breakpoints are defined in the Tailwind `@theme` block in
 ## 📂 Project Structure
 
 ```
-├── Components/
-│   ├── Features/      # Top-level feature composition
-│   ├── Sections/      # Resume sections
-│   ├── IconLinks/     # Contact / reference link icons
-│   ├── Layouts/       # App layout
-│   └── *.razor        # Shared leaf components (+ *.razor.pcss scoped styles)
-├── Models/
-│   ├── Dtos/          # Resume data model
-│   └── Interfaces/    # Cross-cutting component behaviors
-├── Services/          # IResumeSource abstraction + StaticJsonResumeSource
-├── Pages/             # Routable pages (Home)
-├── Styles/            # Global Tailwind entry (MainStyles.css)
-├── wwwroot/           # Static assets (incl. json/ resume data)
-├── build-scoped-css.js  # Per-component pcss → css compiler
-├── .github/           # GitHub Actions workflows
-└── .devcontainer/     # Development container config
+├── ResumeInBlazor.sln
+├── ResumeInBlazor.Client/       # Blazor WebAssembly app
+│   ├── Components/
+│   │   ├── Features/            # Top-level feature composition
+│   │   ├── Sections/            # Resume sections
+│   │   ├── IconLinks/           # Contact / reference link icons
+│   │   ├── Layouts/             # App layout
+│   │   └── *.razor              # Shared leaf components (+ *.razor.pcss scoped styles)
+│   ├── Models/
+│   │   ├── Dtos/                # Resume data model
+│   │   └── Interfaces/          # Cross-cutting component behaviors
+│   ├── Services/                # IResumeSource abstraction + StaticJsonResumeSource
+│   ├── Pages/                   # Routable pages (Home)
+│   ├── Styles/                  # Global Tailwind entry (MainStyles.css)
+│   ├── wwwroot/                 # Static assets (incl. json/ resume data)
+│   └── build-scoped-css.js      # Per-component pcss → css compiler
+├── .github/                     # GitHub Actions workflows
+└── .devcontainer/               # Development container config
 ```
 
 ## 🔧 Build & Deployment
 
 ### Local Build
 ```bash
-   dotnet publish -c Release -o publish
+   dotnet publish ResumeInBlazor.Client -c Release -o publish
 ```
 
 ### Automated Deployment
