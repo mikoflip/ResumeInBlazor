@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <!-- Pinned so moved files keep their ResumeInBlazor.Models.* namespaces -->
+        <RootNamespace>ResumeInBlazor</RootNamespace>
+    </PropertyGroup>
+
+</Project>

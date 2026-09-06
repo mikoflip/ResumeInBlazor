@@ -20,6 +20,10 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.7" PrivateAssets="all"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\ResumeInBlazor.Contracts\ResumeInBlazor.Contracts.csproj" />
+    </ItemGroup>
+
     <Target Name="BuildScopedCss" BeforeTargets="BeforeBuild">
         <Exec Command="npm run build:css" />
     </Target>
