@@ -1,7 +1,6 @@
-# This workflow will build and publish the ResumeInBlazor.Api project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+# Builds and publishes the API.
 
-name: Build and Deploy API
+name: API
 
 on:
   push:
@@ -22,6 +21,11 @@ on:
 
 permissions:
   contents: read
+
+# Supersede redundant PR runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
@@ -45,7 +49,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Restore dependencies
-        run: dotnet restore ResumeInBlazor.Api/ResumeInBlazor.Api.csproj --no-cache
+        run: dotnet restore ResumeInBlazor.Api/ResumeInBlazor.Api.csproj
 
       - name: Build
         run: dotnet build ResumeInBlazor.Api/ResumeInBlazor.Api.csproj --no-restore --configuration Release
