@@ -4,6 +4,9 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <!-- Pinned so the project rename does not shift namespaces or output name -->
+        <RootNamespace>ResumeInBlazor</RootNamespace>
+        <AssemblyName>ResumeInBlazor</AssemblyName>
         <!-- Compression and performance optimizations -->
         <BlazorEnableCompression>true</BlazorEnableCompression>
         <BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>

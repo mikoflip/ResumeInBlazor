@@ -46,8 +46,8 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "dotnet restore && npm install",
-	"postStartCommand": "npm run build:css",
+	"postCreateCommand": "dotnet restore && (cd ResumeInBlazor.Client && npm install)",
+	"postStartCommand": "cd ResumeInBlazor.Client && npm run build:css",
 
 	// Configure tool-specific properties.
 	"customizations": {

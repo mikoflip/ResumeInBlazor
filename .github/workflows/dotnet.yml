@@ -49,22 +49,24 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ResumeInBlazor.Client
 
       - name: Build Tailwind CSS
         run: npm run build:css
+        working-directory: ResumeInBlazor.Client
 
       - name: Restore dependencies
-        run: dotnet restore --no-cache
+        run: dotnet restore ResumeInBlazor.Client/ResumeInBlazor.Client.csproj --no-cache
 
       - name: Build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build ResumeInBlazor.Client/ResumeInBlazor.Client.csproj --no-restore --configuration Release
 
       - name: Test
         if: false # Enable when tests available
         run: dotnet test --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
 
       - name: Publish
-        run: dotnet publish -c Release -o publish --no-build
+        run: dotnet publish ResumeInBlazor.Client/ResumeInBlazor.Client.csproj -c Release -o publish --no-build
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
