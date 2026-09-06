@@ -6,8 +6,18 @@ name: Build and Deploy to GitHub Pages
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'ResumeInBlazor.Client/**'
+      - 'ResumeInBlazor.Contracts/**'
+      - 'ResumeInBlazor.sln'
+      - '.github/workflows/dotnet.yml'
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'ResumeInBlazor.Client/**'
+      - 'ResumeInBlazor.Contracts/**'
+      - 'ResumeInBlazor.sln'
+      - '.github/workflows/dotnet.yml'
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
