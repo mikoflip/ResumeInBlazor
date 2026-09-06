@@ -1,7 +1,6 @@
-# This workflow will build a .NET project and deploy to GitHub Pages
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+# Builds the Blazor WebAssembly client and deploys it to GitHub Pages.
 
-name: Build and Deploy to GitHub Pages
+name: Client
 
 on:
   push:
@@ -26,15 +25,15 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# Supersede redundant PR runs; leave main (Pages deploy) runs alone.
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -47,7 +46,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Cache NuGet packages
         uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
@@ -66,14 +65,10 @@ jobs:
         working-directory: ResumeInBlazor.Client
 
       - name: Restore dependencies
-        run: dotnet restore ResumeInBlazor.Client/ResumeInBlazor.Client.csproj --no-cache
+        run: dotnet restore ResumeInBlazor.Client/ResumeInBlazor.Client.csproj
 
       - name: Build
         run: dotnet build ResumeInBlazor.Client/ResumeInBlazor.Client.csproj --no-restore --configuration Release
-
-      - name: Test
-        if: false # Enable when tests available
-        run: dotnet test --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
 
       - name: Publish
         run: dotnet publish ResumeInBlazor.Client/ResumeInBlazor.Client.csproj -c Release -o publish --no-build
@@ -87,7 +82,7 @@ jobs:
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
           path: 'publish/wwwroot'
-  
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
